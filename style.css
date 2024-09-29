@@ -1,7 +1,6 @@
 :root{
     --maincolor:#057c36;
     --secondcolor:#695733;
-    --thirdcolor:#f4ab01;
   --max-width: 1200px;
   --textcolor:#4A5764;
 }
@@ -12,8 +11,8 @@
     outline: none;
     border: none;
     text-decoration: none;
-    font-family: serif;
-    text-transform: capitalize;
+    font-family:sans-serif;
+    /* text-transform: capitalize; */
     transition: all .2s linear;
 }
 
@@ -43,16 +42,26 @@ header{
 .logo{
     margin-top: 80px;
     width: 300px;
+    transition: 0.3ms;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
 }
 .logo img{
     width: 100%;
 }
+
 .navbar a{
-    position: relative;
-    color: var(--textcolor);
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 1rem;
+  text-decoration: none;
+  color: var(--textcolor);
+  display: inline-block;
+  padding: 0px 16px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: 0.3s all;
+  animation: navMenu 1s ease forwards;
+  animation-delay: calc(0.2s* var(--i));
+  opacity: 0;
 }
 .navbar a:hover{
     color: var(--maincolor );
@@ -79,23 +88,16 @@ header{
     cursor: pointer;
     margin-right: 1rem ;
     display: none;
+    transition: 0.3ms;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
 }
 #menu:hover{
     color: var(--maincolor);
 }
-.right-icons .btn{
-     padding: 1rem;
-     font-size: 1.7rem;
-     color: var(--textcolor);
-     border: 3px solid var(--maincolor);
-     cursor: pointer;
-     margin-right: 30px;
-}
 
-.right-icons .btn:hover{
-    background:var(--maincolor);
-    color:white;
-}
+
 
 /* home section begins */
 
@@ -125,15 +127,23 @@ flex:1 1 35rem ;
   color: var(--maincolor);
   padding: 1rem 0;
   font-weight:bolder ;
+  animation: part1 1s ease forwards;
+  opacity: 0;
   }
   .home .home-left h2{
     font-size: 48px;
     margin: 1rem 0;
+    transition: 0.3ms;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1.5s;
+    opacity: 0;
     }
 
     .home .home-left p{
       font-size: 1.7rem;
       color: var(--textcolor);
+      animation: part1 1s ease forwards;
+      opacity: 0;
     }
 
     .home-btn{
@@ -141,6 +151,10 @@ flex:1 1 35rem ;
       align-items: center;
       gap: 1rem;
       margin-top: 2rem  ;
+      transition: 0.3ms;
+      animation: zoomIn 1s ease forwards;
+      animation-delay: 1.5s;
+      opacity: 0;
     }
 
     .home-btn a{
@@ -172,6 +186,9 @@ flex:1 1 35rem ;
 .home .home-right img{
   width: 100%;
   margin-top: 2rem;
+  animation: zoomIn 1s ease forwards;
+  opacity: 0;
+  animation-delay: 1s;
 }
 .technology{
   padding: 3rem 7%;
@@ -493,6 +510,8 @@ ul li:hover{
   flex: 1 1 300px;
   padding: 1rem;
   box-shadow: rgba(0,0,0,0.35) 0px 5px 15px ;
+  border-radius: 10px;
+
 }
 .review-box img{
   border-radius: 100%;
@@ -501,6 +520,7 @@ ul li:hover{
 .review-box h2{
   font-size: 1.7rem;
   padding-top: 2rem;
+  color: var(--textcolor);
 }
 .review-box p{
   font-size: 1.5rem;
@@ -521,7 +541,7 @@ ul li:hover{
 /* footer  */
  .main-footer{
   padding: 2rem 7%;
-  background: var(--textcolor);
+  background: var(--maincolor);
  }
  .footer-inner{
   display: flex;
@@ -532,7 +552,7 @@ ul li:hover{
   flex: 1 1 200px;
  }
  .footer-content h1{
-  color: white;
+  color: rgb(70, 193, 85);
   text-align: center;
   font-size: 25px;
  }
@@ -542,20 +562,64 @@ ul li:hover{
   color: white;
   font-size: 1.5rem;
   padding: 1rem;
-  margin: 0.5rem;
  }
- .link a i{
+ 
+ .abt h1{
+  margin-bottom: 40px;
+  margin-right: 100px;
+ }
+.abt p{
+  font-size: 17px;
+  color: #ffffff;
+  margin-bottom: 30px;
+  line-height: 3rem;
+}
+.abt .social{
+  display: flex;
+  gap: 10px;
+  margin: 0;
+}
+ .abt a i{
   border: 1px solid white;
   border-radius: 100%;
   padding: 1rem;
  }
 
- .link a i:hover{
+ .social a i:hover{
   transform: scale(1.1);
  }
+.footer-content form{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+form input{
+  padding: 10px;
+border-radius: 20px;
+font-size: 18px;
+}
+form textarea{
+  padding: 10px;
+font-size: 18px;
+border-radius: 20px;
+}
+#button{
+  width: 50%;
+  margin-left: 40px;
+  padding: 15px;
+  background-color: #cf9205;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 16px;
+}
 
-
-
+.footer-bottom{
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  margin-top: 20px;
+}
 
 
 
@@ -641,12 +705,37 @@ ul li:hover{
       .right-content h2{
         font-size: 20px;
       } 
+    
       .doctors-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        margin-top: 1rem;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+    
       }
+      .doc-content h2{
+        font-size: 30px;
+      }
+      .doctors-card{
+        width: 100%;
+      }
+      .review-heading h1{
+        font-size: 30px;
+      }
+      .footer-inner{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+      }
+      .footer-content .abt{
+        width: 100%;
+      }
+      .footer-content .quicklinks{
+        width: 120%;
+        margin-right: 100px;
+      }
+
 }
 
 @media (max-width:395px){
@@ -684,4 +773,98 @@ ul li:hover{
   .inner-tech{
     padding:1rem 2rem;
   } 
+}
+
+@keyframes slideUp{
+  0%{
+      transform: translateY(100px);
+      opacity: 0;
+  }
+  100%{
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+@keyframes slideLeft{
+  0%{
+      transform: translateX(-100px);
+      opacity: 0;
+  }
+  100%{
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideRight{
+  0%{
+      transform: translateX(-100px);
+      opacity: 0;
+  }
+  100%{
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+@keyframes slideLeftp{
+  0%{
+      transform: translateX(100px);
+      opacity: 0;
+  }
+  100%{
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+@keyframes zoomIn{ 
+  0%{ 
+      transform: scale(0);
+      opacity: 0;
+  }
+  100%{
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+@keyframes buttons{
+  0%{
+      transform: translateX(100px);
+      opacity: 0;
+  }
+  100%{
+      transform: translateX(0);
+      opacity: 1; 
+  }
+}
+
+@keyframes part1{
+  0%{
+      transform: translateY(100px);
+      opacity: 0;
+  }
+  100%{
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes part2{
+  0%{
+      transform: translateY(-100px);
+      opacity: 0;
+  }
+  100%{
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+@keyframes navMenu{
+  0%{
+      transform: translateY(100px);
+      opacity: 0;
+  }
+  100%{
+      transform: translateY(0);
+      opacity: 1;
+  }
 }
